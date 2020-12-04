@@ -1,0 +1,4 @@
+Remove search bar from first page, redundant
+About page, make image smaller, less writeup
+Restaurant page, put info like contact number/address/opening hrs/etcc... see requirements
+Bring restaurant name to top, cuisine type

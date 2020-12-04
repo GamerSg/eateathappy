@@ -1,0 +1,121 @@
+<html><head>
+<title>Schema Report for database: eatdb</title>
+<style>
+        td,th {
+        text-align:left;
+        vertical-align:middle;
+        }
+        table {
+        border-collapse: collapse;
+        border: 1px solid;
+        }
+        caption, th, td {
+        padding: .2em .8em;
+        border: 1px solid #000000;
+        }
+        caption {
+        background: #D3D3D3;
+        font-weight: bold;
+        font-size: 1.1em;
+        }
+        th {
+        font-weight: bold;
+        background: #000000;
+        color: white;
+        }
+        td {
+        background: #FFFFFF;
+        }
+        </style>
+      </head>
+     <body>
+<h1>Schema Report for database: eatdb</h1>
+<a id="Restaurants"></a><table style="width:100%"><caption>Table: Restaurants </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Not Null</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Unique</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>name</td><td>VARCHAR(50)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>description</td><td>TEXT</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>cuisine</td><td>VARCHAR(10)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>website</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>img1</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>img2</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>img3</td><td>VARCHAR(100)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>priceRange</td><td>INT</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table></br>
+<a id="Users"></a><table style="width:100%"><caption>Table: Users </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Not Null</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Unique</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>firstName</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>lastName</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>email</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>gender</td><td>CHAR(1)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>address</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>mobile</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>password</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td>SHA256 of password</td></tr>
+<tr><td>img</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>dateCreated</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table></br>
+<a id="Branch"></a><table style="width:100%"><caption>Table: Branch </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Not Null</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Unique</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>restID</td><td>INT</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>address</td><td>VARCHAR(150)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>contactNumber</td><td>VARCHAR(15)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>openingHrs</td><td>VARCHAR(100)</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>lat</td><td>DECIMAL(8,5)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>long</td><td>DECIMAL(8,5)</td><td>No</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table></br>
+<a id="Reviews"></a><table style="width:100%"><caption>Table: Reviews </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Not Null</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Unique</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>userID</td><td>INT</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>restID</td><td>INT</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>reviewTxt</td><td>TEXT</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+<tr><td>score</td><td>INT</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>3</td><td></td></tr>
+<tr><td>dateCreated</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td></td><td></td></tr>
+</table></br>
+</body></html>
