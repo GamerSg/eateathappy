@@ -4,31 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eat Eat Happy - About</title>
+    <title>Eat Eat Happy - Sign Up</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/eat.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/w3.js"></script>
+    <script src="js/register.js"></script>
     <script src="js/eat.js"></script>
 </head>
 
 <body class="bg-dark">
     <div w3-include-html="navbar.html"></div>
-    <div class="row w-75 mx-auto mt-5 p-5 bg-light rounded">
-        <div class="col-sm-6">
-            <img class="float-right" src="image/cake.jpg">
-        </div>
-        <div class="col-sm-6">
-            <h1>About</h1>
-            <p class="lead">
-            Eat Eat Happy was founded due to the obersvation of chronic depression amongst people living the mordern
-            urban lifestyle.
-            We realised that the only time we were happy was when we were eating GOOD FOOD and getting FAT!<BR><BR>
-            Our mission is to aid you in finding the GOOD food you are craving with community guided reviews so that you can EAT EAT HAPPY!
-        </p>
-        </div>
+    <div class="w-75 mx-auto mt-5 p-5 bg-light rounded">
+        <h1>Login</h1>
+        <BR>
+        <form class="needs-validation" id="loginForm" onsubmit="return doLogin()">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>            
+            </div>
+            <div class="form-group mb-1">
+                <label for="PW">Password</label>
+                <input type="password" class="form-control" name="pwd" placeholder="Password" required>
+            </div>
+            <BR>
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+        <div class="alert alert-danger collapse mt-4" id="msg"></div>
     </div>
     <div w3-include-html="footer.html"></div>
     <script>

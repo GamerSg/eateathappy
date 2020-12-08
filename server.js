@@ -1,7 +1,9 @@
 "use strict";
 
 const express = require("express");
-//const routeMovies = require('./routes/routeMovies');
+const routeAPI = require('./routes/routeAPI');
+var cookieParser = require('cookie-parser');
+
 //const routeComments = require('./routes/routeComments');
 const bodyParser = require("body-parser");
 var app = express();
@@ -12,8 +14,9 @@ var startPage = "index.html";
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
-//routeMovies.routeMovies(app);
+routeAPI.routeAPI(app);
 //routeComments.routeComments(app);
 
 function gotoIndex(req, res) {
