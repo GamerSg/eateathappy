@@ -1,14 +1,12 @@
 "use strict"
 
 const API = require("../Models/API");
-
-//const movidedb = require('../Models/MovieDB');
-
-
+const RestaurantsDB = require("../Models/RestaurantsDB");
 function routeAPI(app){
     app.route('/register').post(API.doRegister);
     app.route('/login').post(API.doLogin);
     app.route('/logout').get(API.doLogout);
+    app.route('/getrestaurants').get(RestaurantsDB.getRestaurants);
 }
 module.exports = {routeAPI};
 

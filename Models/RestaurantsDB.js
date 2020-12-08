@@ -20,6 +20,20 @@ class RestaurantsDB {
         });
     }
 
+    static getRestaurants(req, res) {
+        var sql = "SELECT * FROM eatdb.restaurants LIMIT 9";
+        return db.query(sql,function (error, result) {
+            if (error) {
+                throw error;
+            }
+            else {
+                res.json(result);
+            }
+        });
+    }
+
+
+
 }
 
 module.exports = RestaurantsDB;
