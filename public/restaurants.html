@@ -20,14 +20,90 @@
     <div class="w-75 mx-auto mt-5 p-1 bg-light rounded">
         <div class="row m-1">
             <div id="content" class="col-sm-9 p-0 row m-0"></div>
-            <div class="col-sm-3 p-2 m-0">Filter</div>
-        </div>
-    </div>
-    <div w3-include-html="footer.html"></div>
-    <script>
-        w3.includeHTML(checkLogin);
-        getRestaurants();
-    </script>
+            <div class="col-sm-3 p-2 m-0">
+                <div class="card">
+                    <div class="card-header lead">
+                        Filter
+                    </div>
+                    <div class="card-body">
+                        <form id="restForm">
+                        <label for="PW">Search</label>
+                        <input type="text" placeholder="Search" class="form-control" id="filter" name="filter" oninput="getRestaurants()">
+                        <BR>
+                        <div class="form-group">
+                            <label>Cuisine</label><BR>
+                            <div class="row">
+                                <div class="form-check col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="western" value="western" name="cuisine">
+                                    <label class="form-check-label" for="western">Western</label>
+                                </div>
+                                <div class="col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="halal" value="halal" name="cuisine">
+                                    <label class="form-check-label" for="halal">Halal</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="vegan" value="vegan" name="cuisine">
+                                    <label class="form-check-label" for="vegan">Vegan</label>
+                                </div>
+                                <div class="col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="japanese" value="japanese" name="cuisine">
+                                    <label class="form-check-label" for="japanese">Japanese</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="vegetarian" value="vegetarian" name="cuisine">
+                                    <label class="form-check-label" for="vegetarian">Vegetarian</label>
+                                </div>
+                                <div class="col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="chinese" value="chinese" name="cuisine">
+                                    <label class="form-check-label" for="chinese">Chinese</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="indian" value="indian" name="cuisine">
+                                    <label class="form-check-label" for="indian">Indian</label>
+                                </div>
+                                <div class="col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="korean" value="korean" name="cuisine">
+                                    <label class="form-check-label" for="korean">Korean</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-check col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="lebanese" value="lebanese" name="cuisine">
+                                    <label class="form-check-label" for="lebanese">Lebanese</label>
+                                </div>
+                                <div class="col-sm-3 mx-3">
+                                    <input class="form-check-input" type="checkbox" id="others" value="others" name="cuisine">
+                                    <label class="form-check-label" for="others">Others</label>
+                                </div>
+                            </div>
+                        </div>
+                        <BR>
+                            <label class="form-check-label" for="sortby">Sort By:</label>
+                            <select class="form-control" name="sortby" id="sortby">
+                                <option>Name</option>
+                                <option>Rating</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div></div>
+        <div w3-include-html="footer.html"></div>
+        <script>
+            w3.includeHTML(checkLogin);
+            getRestaurants();
+            $("#restForm :input").change(function () {
+                getRestaurants();
+            });
+        </script>
 </body>
 
 </html>

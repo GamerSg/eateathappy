@@ -21,8 +21,38 @@ class RestaurantsDB {
     }
 
     static getRestaurants(req, res) {
-        var sql = "SELECT * FROM eatdb.restaurants LIMIT 9";
-        return db.query(sql,function (error, result) {
+        console.log(req.query);
+        var cuisines="";
+        if (typeof req.query.cuisine !== 'undefined') {
+            cuisines = " AND (";
+            if (typeof req.query.cuisine === 'string') {
+                cuisines += "cuisine LIKE '%" + req.query.cuisine + "%')";
+            }
+            else {
+                for (var c of req.query.cuisine) {
+                    cuisines += "cuisine LIKE '%" + c + "%' OR ";
+                }
+                cuisines = cuisines.slice(0, -3) + ")";
+            }
+        }
+        var filter = "(name LIKE '%"+req.query.filter+"%' OR cuisine LIKE '%"+req.query.filter+"%')";
+        var sql = "SELECT * FROM eatdb.restaurants WHERE " + filter + cuisines + " LIMIT 12";
+        return db.query(sql, function (error, result) {
+            console.log(this.sql);
+            if (error) {
+                throw error;
+            }
+            else {
+                res.json(result);
+            }
+        });
+    }
+
+    static getRestaurant(req, res) {
+        console.log(req.query);
+        var sql = "SELECT * FROM eatdb.restaurants WHERE id=" + req.query.id;
+        return db.query(sql, function (error, result) {
+            console.log(this.sql);
             if (error) {
                 throw error;
             }

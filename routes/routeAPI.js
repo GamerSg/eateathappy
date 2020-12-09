@@ -7,6 +7,7 @@ function routeAPI(app){
     app.route('/login').post(API.doLogin);
     app.route('/logout').get(API.doLogout);
     app.route('/getrestaurants').get(RestaurantsDB.getRestaurants);
+    app.route('/getrestaurant').get(RestaurantsDB.getRestaurant);
 }
 module.exports = {routeAPI};
 
