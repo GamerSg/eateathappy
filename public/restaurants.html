@@ -99,6 +99,9 @@
         <div w3-include-html="footer.html"></div>
         <script>
             w3.includeHTML(checkLogin);
+            //Check if any search param in URL
+            let searchParams = new URLSearchParams(window.location.search)
+            $('#filter').val(searchParams.get('search'));
             getRestaurants();
             $("#restForm :input").change(function () {
                 getRestaurants();

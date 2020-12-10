@@ -19,6 +19,13 @@ function checkLogin() {
     }
 }
 
+function doSearch()
+{
+    var url = document.getElementById('searchBar').value;
+    location.href = 'restaurants.html?search='+url;
+    return false;    
+}
+
 function getRestaurants() {
     var filter = $('#restForm').serialize();
     console.log( filter );
