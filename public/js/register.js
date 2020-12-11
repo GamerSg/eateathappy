@@ -60,19 +60,6 @@ $(document).ready(function (e) {
 
     $('#message').empty();
 
-    $.ajax({
-      url: "upload-image.php",
-      type: "POST",
-      data: new FormData(this),
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function (data) {
-        $('#loading').hide();
-        $('#message').html(data);
-      }
-    });
-
   });
 
   $('#profPic').on("change", function () {

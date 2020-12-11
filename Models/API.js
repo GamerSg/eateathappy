@@ -50,8 +50,8 @@ class API {
                     }
                     else
                     {
-                        respond.cookie('user', result[0].firstName, {maxAge: 360000});
-                        respond.cookie('id', result[0].id, {maxAge: 360000});
+                        respond.cookie('user', result[0].firstName, {maxAge: 3600000});
+                        respond.cookie('id', result[0].id, {maxAge: 3600000});
                         respond.send("success")
                     }
                     console.log(result);

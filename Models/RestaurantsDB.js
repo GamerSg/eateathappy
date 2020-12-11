@@ -36,7 +36,7 @@ class RestaurantsDB {
             }
         }
         var filter = "(name LIKE '%"+req.query.filter+"%' OR cuisine LIKE '%"+req.query.filter+"%')";
-        var sql = "SELECT * FROM eatdb.restaurants WHERE " + filter + cuisines + " LIMIT 12";
+        var sql = "SELECT * FROM eatdb.restaurants WHERE " + filter + cuisines + " ORDER BY name";
         return db.query(sql, function (error, result) {
             console.log(this.sql);
             if (error) {
@@ -51,6 +51,20 @@ class RestaurantsDB {
     static getRestaurant(req, res) {
         console.log(req.query);
         var sql = "SELECT * FROM eatdb.restaurants WHERE id=" + req.query.id;
+        return db.query(sql, function (error, result) {
+            console.log(this.sql);
+            if (error) {
+                throw error;
+            }
+            else {
+                res.json(result);
+            }
+        });
+    }
+
+    static getBranch(req, res) {
+        console.log(req.query);
+        var sql = "SELECT * FROM eatdb.branch WHERE restID=" + req.query.id;
         return db.query(sql, function (error, result) {
             console.log(this.sql);
             if (error) {
